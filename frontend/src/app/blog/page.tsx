@@ -4,7 +4,7 @@ import React from "react";
 function Blog() {
   return (
     <>
-      <div>qwesdfsdf</div>
+      <div className="h-screen p-5">This is blog</div>
     </>
   );
 }

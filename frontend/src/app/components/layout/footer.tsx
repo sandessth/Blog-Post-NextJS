@@ -28,6 +28,11 @@ function Footer() {
             Content Policy
           </Link>
         </div>
+
+        <p className="text-slate-900/80  hover:backdrop-lg px-3">
+          © 2023 NAMKHANG-SANDESH®. ALL RIGHTS RESERVED.
+        </p>
+
         <div className="flex justify-between items-center">
           <Link
             href="https://github.com/sandessth/Blog-Post-NextJS"

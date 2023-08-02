@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { FaSignInAlt } from "react-icons/fa";
-import { FiSearch } from "react-icons/fi";
+import { FaSearch } from "react-icons/fa";
 function Header() {
   return (
     <div className="sticky top-0 z-50 bg-gradient-to-b from-blue-200 to-blue-100/50 backdrop-blur-sm p-3 ">
@@ -16,11 +16,39 @@ function Header() {
             </Link>
           </div>
           <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center font-bold gap-4">
+              <Link
+                href="/blog"
+                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+              >
+                About
+              </Link>
+
+              <Link
+                href="/blog"
+                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+              >
+                Destinations
+              </Link>
+              <Link
+                href="/blog"
+                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+              >
+                Newsletter
+              </Link>
+
+              <Link
+                href="/blog"
+                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+              >
+                Contact
+              </Link>
+            </div>
             <Link
               href="/blog"
-              className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+              className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative pl-4"
             >
-              <FiSearch />
+              <FaSearch />
               <div className="hidden text-sm text-white group-hover:block absolute top-8 right-0 bg-gray-500/80">
                 Search
               </div>
