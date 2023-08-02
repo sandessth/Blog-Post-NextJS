@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <nav className=" bg-gradient-to-t from-blue-500/20 to-blue-300/5 backdrop-blur-sm">
+    <nav className=" bg-gradient-to-t from-blue-500/20 to-blue-300/5 backdrop-blur-sm pt-2">
       <div className=" flex justify-between text-sm p-3">
         <div className="flex justify-between text-xs">
           <Link
@@ -35,7 +35,7 @@ function Footer() {
           >
             <AiFillGithub />
             <div className="hidden text-xs text-white group-hover:block absolute bottom-8 right-0 bg-gray-500/80">
-              See codes in Github
+              See codes source in Github
             </div>
           </Link>
           <p className="text-slate-900/80  hover:backdrop-lg px-3">|</p>

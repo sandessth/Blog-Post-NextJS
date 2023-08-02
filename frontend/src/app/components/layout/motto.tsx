@@ -2,10 +2,11 @@ import React from "react";
 
 function Motto() {
   return (
-    <div className="p-5 mb-72">
-      <div className="text-2xl pb-2 text-slate-900/80 flex justify-center">
-        Paint Your Thoughts with Words
+    <div className="p-5 mb-72 h-screen">
+      <div className="text-2xl pb-2 text-slate-900/80 flex justify-center mt-10">
+        Paint Your Thoughts With Words
       </div>
+
       <div className="text-xl text-slate-900/80 flex justify-center">
         Reflect, Share, Connect
       </div>
@@ -14,6 +15,8 @@ function Motto() {
           CREATE YOUR BLOG
         </button>
       </div>
+      <br />
+      <h4 className="text-center">Telling Stories Through Travels</h4>
     </div>
   );
 }

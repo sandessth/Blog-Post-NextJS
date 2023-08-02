@@ -1,16 +1,16 @@
 import Link from "next/link";
 import React from "react";
-import { FiLogIn } from "react-icons/fi";
+import { FaSignInAlt } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 function Header() {
   return (
-    <div className="sticky top-0 z-50 bg-gradient-to-b from-blue-200 to-blue-100/50 backdrop-blur-sm ">
+    <div className="sticky top-0 z-50 bg-gradient-to-b from-blue-200 to-blue-100/50 backdrop-blur-sm p-3 ">
       <nav className="  p-2 px-5 text-lg">
         <div className="flex justify-between">
           <div>
             <Link
               href="/"
-              className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg text-3xl"
+              className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg text-3xl font-bold"
             >
               VividVerse
             </Link>
@@ -30,7 +30,7 @@ function Header() {
               href="/signin"
               className="text-slate-900/80 text-xl hover:text-blue-500 hover:backdrop-lg group relative"
             >
-              <FiLogIn />
+              <FaSignInAlt />
               <div className="hidden text-sm  text-white group-hover:block absolute top-8 right-0 bg-gray-500/80">
                 SignIn
               </div>
