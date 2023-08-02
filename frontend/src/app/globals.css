@@ -25,3 +25,13 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.bgimg {
+  background-image: url("../../public/images/bg.jpg");
+  background-size: cover;
+  background-position: absolute;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* height: full;
+    width: full; */
+}
