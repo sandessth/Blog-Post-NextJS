@@ -1,9 +1,12 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Create() {
   const [title, setTitle] = useState("");
-  const [bcontent, setBcontent] = useState("");
+  const [content, setContent] = useState("");
 
   const handleCancel = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -17,14 +20,34 @@ function Create() {
   ) => {
     event.preventDefault();
     console.log({ title });
+    if (!title) {
+      toast.error("Please enter title.");
+      return;
+    } else if (!content) {
+      toast.error("Please enter content.");
+      return;
+    }
+
+    axios
+      .post("http://localhost:4000/blog", { title, content })
+      .then((response) => {
+        console.log(response);
+        toast.success("Blog created successfully");
+        setTitle("");
+        setContent("");
+        // navigate("/signin");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
   return (
     <div className="flex justify-center p-10 ">
-      <div className="w-2/3 border border-2 border-gray-900/10 p-5 bg-gray-300/20 rounded-lg">
+      <main className="w-2/3 border border-2 border-gray-900/10 p-5 bg-gray-300/20 rounded-lg">
         <div className="text-xl text-slate-900/80 hover:text-blue-800 flex justify-center">
           Create Blog:
         </div>
-        <div className="p-10 flex items-center">
+        <div className="pt-10 pb-5 flex items-center">
           <label className="block text-sm text-slate-900/80 font-medium leading-6 text-gray-900 dark:text-slate-100">
             Title:&ensp;
           </label>
@@ -43,8 +66,8 @@ function Create() {
           </label>
           <div className="mt-2">
             <textarea
-              value={bcontent}
-              onChange={(event) => setBcontent(event.target.value)}
+              value={content}
+              onChange={(event) => setContent(event.target.value)}
               id="about"
               name="about"
               className="block dark:bg-slate-200/20 dark:text-slate-100 pb-72 w-full px-1 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6"
@@ -67,7 +90,8 @@ function Create() {
             </div>
           </div>
         </div>
-      </div>
+      </main>
+      <ToastContainer />
     </div>
   );
 }
