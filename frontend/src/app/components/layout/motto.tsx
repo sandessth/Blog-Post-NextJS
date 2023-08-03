@@ -15,8 +15,6 @@ function Motto() {
           CREATE YOUR BLOG
         </button>
       </div>
-      <br />
-      <h4 className="text-center">Telling Stories Through Travels</h4>
     </div>
   );
 }
