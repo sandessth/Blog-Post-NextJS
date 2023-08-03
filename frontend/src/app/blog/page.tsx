@@ -1,10 +1,14 @@
 "use client";
 import React from "react";
+import Create from "./components/new-blog";
+import SideNav from "../components/layout/sidenav";
 
 function Blog() {
   return (
     <>
-      <div className="h-screen p-5">This is blog</div>
+      <div>
+        <Create />
+      </div>
     </>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function Motto() {
   return (
@@ -11,9 +12,11 @@ function Motto() {
         Reflect, Share, Connect
       </div>
       <div className="text-sm m-4 text-slate-900/80 flex justify-center">
-        <button className="bg-yellow-400 p-2 rounded-md border-2 border-yellow-500 hover:bg-yellow-300 hover:border-yellow-400 back drop-shadow-xl">
-          CREATE YOUR BLOG
-        </button>
+        <Link href="/blog">
+          <button className="bg-yellow-400 p-2 rounded-md border-2 border-yellow-500 hover:bg-yellow-300 hover:border-yellow-400 back drop-shadow-xl">
+            CREATE YOUR BLOG
+          </button>
+        </Link>
       </div>
     </div>
   );
