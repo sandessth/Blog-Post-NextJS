@@ -16,7 +16,7 @@ function Header() {
             </Link>
           </div>
           <div className="flex justify-between items-center">
-            <div className="flex justify-between items-center font-bold gap-4">
+            <div className="flex justify-between items-center font-bold gap-6">
               <Link
                 href="/blog"
                 className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
@@ -24,12 +24,6 @@ function Header() {
                 About
               </Link>
 
-              <Link
-                href="/blog"
-                className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
-              >
-                Destinations
-              </Link>
               <Link
                 href="/blog"
                 className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
@@ -46,7 +40,7 @@ function Header() {
             </div>
             <Link
               href="/blog"
-              className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative pl-4"
+              className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative pl-16"
             >
               <FaSearch />
               <div className="hidden text-sm text-white group-hover:block absolute top-8 right-0 bg-gray-500/80">

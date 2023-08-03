@@ -29,18 +29,18 @@ function Footer() {
           </Link>
         </div>
 
-        <p className="text-slate-900/80  hover:backdrop-lg px-3">
+        {/* <p className="text-slate-900/80  hover:backdrop-lg px-3">
           © 2023 NAMKHANG-SANDESH®. ALL RIGHTS RESERVED.
-        </p>
+        </p> */}
 
         <div className="flex justify-between items-center">
           <Link
             href="https://github.com/sandessth/Blog-Post-NextJS"
-            className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative"
+            className="text-slate-900/80 hover:text-blue-500 text-xl hover:backdrop-lg group relative"
           >
             <AiFillGithub />
             <div className="hidden text-xs text-white group-hover:block absolute bottom-8 right-0 bg-gray-500/80">
-              See codes source in Github
+              See codes in Github
             </div>
           </Link>
           <p className="text-slate-900/80  hover:backdrop-lg px-3">|</p>
