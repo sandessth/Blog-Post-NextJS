@@ -35,7 +35,7 @@ const SignIn = () => {
       });
       toast.success("Successfuly Signed In");
       console.log(response.data);
-      router.push("/dashboard");
+      router.push("/blog");
       localStorage.setItem("session-token", response.data.accessToken);
     } catch (error) {
       toast.error("Please Try Again");
