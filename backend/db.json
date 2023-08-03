@@ -1,4 +1,10 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "angela2023@gmail.com",
+      "password": "$2a$10$TrRZ15vXEvsPDgCFdIIJK.qgiAQEhAcKVCVmvXeyWGei2w3tjRKlW",
+      "id": 1
+    }
+  ],
   "blog": []
 }
