@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import InputBar from "../components/layout/input";
+// import InputBar from "../components/layout/input";
 
 function SignIn() {
   const [email, setEmail] = useState("");
