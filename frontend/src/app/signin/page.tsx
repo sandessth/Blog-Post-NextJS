@@ -3,7 +3,7 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import Inputfield from "../blog/components/inputfield";
+import Inputfield from "@/blog/components/inputfield";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,6 +13,7 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { useRouter } from "next/navigation";
 
 const SignIn = () => {
+  // console.log(localStorage.getItem("session-token"));
   const initialvalues = {
     email: "",
     password: "",
@@ -43,7 +44,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="bgimg h-screen flex justify-center items-center ">
+    <div className="flex justify-center items-center py-5 ">
       <Formik
         initialValues={initialvalues}
         onSubmit={handleSubmit}
@@ -51,7 +52,7 @@ const SignIn = () => {
       >
         {() => {
           return (
-            <div className="flex flex-col justify-center items-center w-full h-100vph backdrop-blur-sm text-black font-medium font-serif">
+            <div className="flex flex-col justify-center items-center w-full h-100vph text-black font-medium font-serif">
               <Form className="w-[30%] h-120vph bg-black bg-opacity-10 border-2 border-black border-solid rounded p-10 flex flex-col justify-center m-0 pt-10 pb-10">
                 <h1 className="text-3xl mb-8 text-bold text-center">Sign In</h1>
                 <Inputfield
