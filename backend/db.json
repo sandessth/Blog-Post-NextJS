@@ -4,6 +4,11 @@
       "email": "angela2023@gmail.com",
       "password": "$2a$10$TrRZ15vXEvsPDgCFdIIJK.qgiAQEhAcKVCVmvXeyWGei2w3tjRKlW",
       "id": 1
+    },
+    {
+      "email": "san@gmai.com",
+      "password": "$2a$10$ZmOJpOtnGSgxb8bXoiVPWOCbIf9Tm2Y/YR0FYOnaMyqlEumo5ZMQu",
+      "id": 2
     }
   ],
   "blog": [
