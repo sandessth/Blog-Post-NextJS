@@ -8,10 +8,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
-import { FiUser } from "react-icons/fi";
-import { BsLock } from "react-icons/bs";
-import { PiGoogleLogo } from "react-icons/pi";
-import { CiFacebook, CiTwitter } from "react-icons/ci";
+import { FaUserAlt } from "react-icons/fa";
+import { RiLockPasswordFill } from "react-icons/ri";
 import { useRouter } from "next/navigation";
 
 const SignIn = () => {
@@ -20,11 +18,11 @@ const SignIn = () => {
     password: "",
   };
   const validationSchema = Yup.object({
-    email: Yup.string().required("Please enter valid email address."),
-    password: Yup.string().required("Please enter correct password"),
+    email: Yup.string().required("Please Enter A Valid E-mail Address"),
+    password: Yup.string().required("Please Enter A Correct Password"),
     checkbox: Yup.boolean().oneOf(
       [true],
-      "Please accept all the terms and conditions."
+      "Please Read And Accept All The Terms And Conditions"
     ),
   });
   const router = useRouter();
@@ -35,12 +33,12 @@ const SignIn = () => {
         email: values.email,
         password: values.password,
       });
-      toast.success("Successfully signed in");
+      toast.success("Successfuly Signed In");
       console.log(response.data);
       router.push("/dashboard");
       localStorage.setItem("session-token", response.data.accessToken);
     } catch (error) {
-      toast.error("Could not sign in");
+      toast.error("Please Try Again");
     }
   };
 
@@ -53,22 +51,22 @@ const SignIn = () => {
       >
         {() => {
           return (
-            <div className="flex flex-col justify-center items-center w-full h-100vph backdrop-blur-sm text-black font-medium rounded">
-              <Form className="w-[30%] h-100vph bg-black bg-opacity-10 border-l-2 border-r-2 p-20 flex flex-col justify-center m-0">
-                <h1 className="text-3xl mb-4 text-bold text-center">Sign In</h1>
+            <div className="flex flex-col justify-center items-center w-full h-100vph backdrop-blur-sm text-black font-medium font-serif">
+              <Form className="w-[30%] h-120vph bg-black bg-opacity-10 border-2 border-black border-solid rounded p-10 flex flex-col justify-center m-0 pt-10 pb-10">
+                <h1 className="text-3xl mb-8 text-bold text-center">Sign In</h1>
                 <Inputfield
                   type="text"
                   name="email"
-                  label="Email Address"
-                  icon={<FiUser />}
+                  label="E-mail Address"
+                  icon={<FaUserAlt />}
                 />
                 <Inputfield
                   type="password"
                   name="password"
                   label="Password"
-                  icon={<BsLock />}
+                  icon={<RiLockPasswordFill />}
                 />
-                <p className="text-right mb-8">Forgot Password?</p>
+                <p className="text-center mb-8">Forgot Password?</p>
 
                 <button
                   type="submit"
@@ -77,9 +75,10 @@ const SignIn = () => {
                   Sign In
                 </button>
                 <Link href="/signup" passHref>
-                  <span className="p-6 mb-6 text-underline">
-                    Don't have an Account? Sign Up Here!
-                  </span>
+                  <p className="text-bold text-center underline">
+                    Don't have an Account? <br />
+                    Register Here!
+                  </p>
                 </Link>
               </Form>
               <ToastContainer className="ml-auto" />

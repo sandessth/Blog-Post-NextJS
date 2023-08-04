@@ -7,9 +7,9 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FiUser } from "react-icons/fi";
-import { BsLock } from "react-icons/bs";
-import { AiOutlineMail } from "react-icons/Ai";
+import { FaUserAlt } from "react-icons/fa";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { MdAttachEmail } from "react-icons/Md";
 
 const SignUp = () => {
   const initialvalues = {
@@ -20,16 +20,16 @@ const SignUp = () => {
     confirmpassword: "",
   };
   const validationSchema = Yup.object({
-    name: Yup.string().required("Please enter your Name."),
-    username: Yup.string().required("Please enter your username."),
-    email: Yup.string().required("Please enter valid email address."),
-    password: Yup.string().required("Please enter correct password"),
+    name: Yup.string().required("Please Enter Your Name"),
+    username: Yup.string().required("Please Enter Your User Name"),
+    email: Yup.string().required("Please Enter A  Valid E-mail Address"),
+    password: Yup.string().required("Please Enter A Correct Password"),
     confirmpassword: Yup.string()
-      .required("Please confirm password")
-      .oneOf([Yup.ref("password")], "Password must match"),
+      .required("Please Confirm  Your Password")
+      .oneOf([Yup.ref("password")], "Passwords Must Match"),
     checkbox: Yup.boolean().oneOf(
       [true],
-      "Please accept all the terms and conditions."
+      "Please  Read And Accept All The Terms And Conditions"
     ),
   });
   const router = useRouter();
@@ -40,11 +40,11 @@ const SignUp = () => {
         email: values.email,
         password: values.password,
       });
-      toast.success("Successfully created your account.");
+      toast.success("Successfully Created Your Account.");
       router.push("/signin");
       localStorage.setItem("session-token", response.data.accessToken);
     } catch (error) {
-      toast.error("Could not sign up");
+      toast.error("Could Not Sign Up");
     }
   };
 
@@ -55,40 +55,40 @@ const SignUp = () => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col justify-center items-center w-full h-100vph backdrop-blur-sm text-black font-medium border-solid black rounded">
-          <Form className="w-[30%] h-50vph bg-white bg-opacity-10 border-l-2 border-r-2 p-5 flex flex-col justify-center">
+        <div className="flex flex-col justify-center items-center w-full h-100vph backdrop-blur-sm text-black font-medium font-serif">
+          <Form className="w-[30%] h-100vph bg-black bg-opacity-10 border-2 border-black border-solid rounded p-10 flex flex-col justify-center m-0">
             <h1 className="text-3xl mb-4 mt-4 text-bold text-center">
-              Sign Up
+              Register
             </h1>
             <Inputfield
               type="text"
               name="name"
               label="Name"
-              icon={<FiUser />}
+              icon={<FaUserAlt />}
             />
             <Inputfield
               type="text"
               name="username"
-              label="Username"
-              icon={<FiUser />}
+              label="User Name"
+              icon={<FaUserAlt />}
             />
             <Inputfield
               type="text"
               name="email"
-              label="Email"
-              icon={<AiOutlineMail />}
+              label="E-mail"
+              icon={<MdAttachEmail />}
             />
             <Inputfield
               type="password"
               name="password"
               label="Password"
-              icon={<BsLock />}
+              icon={<RiLockPasswordFill />}
             />
             <Inputfield
               type="password"
               name="confirmpassword"
               label="Confirm Password"
-              icon={<BsLock />}
+              icon={<RiLockPasswordFill />}
             />
 
             <button
