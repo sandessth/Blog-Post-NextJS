@@ -3,7 +3,7 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import Inputfield from "@/blog/components/inputfield";
+import Inputfield from "@/components/layout/inputfield";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -36,7 +36,7 @@ const SignIn = () => {
       });
       toast.success("Successfuly Signed In");
       console.log(response.data);
-      router.push("/dashboard");
+      router.push("/");
       localStorage.setItem("session-token", response.data.accessToken);
     } catch (error) {
       toast.error("Please Try Again");
