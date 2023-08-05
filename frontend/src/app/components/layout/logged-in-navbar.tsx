@@ -4,8 +4,17 @@ import React from "react";
 import { FaSignOutAlt } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import NavBar from "./logged-out-navbar";
+import { useNavigate } from "react-router-dom";
 
 function NavBarIn() {
+  const HandleLogout = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    const navigate = useNavigate();
+    localStorage.removeItem("session-token");
+    navigate("/signin");
+  };
   return (
     <div className="sticky top-0 z-50 bg-gradient-to-b from-blue-200 to-blue-100/50 backdrop-blur-sm px-3 ">
       <nav className="  px-2 px-5 text-lg">
@@ -60,6 +69,7 @@ function NavBarIn() {
             <Link
               href="/signin"
               className="text-slate-900/80 text-xl hover:text-blue-500 hover:backdrop-lg group relative"
+              onClick={HandleLogout}
             >
               <FaSignOutAlt />
               <div className="hidden text-sm  text-white group-hover:block absolute top-8 right-0 bg-gray-500/80">
