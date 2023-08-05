@@ -5,15 +5,15 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import NavBar from "./logged-out-navbar";
 import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 function NavBarIn() {
-  const HandleLogout = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const router = useRouter();
+  const HandleLogout = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    const navigate = useNavigate();
+
     localStorage.removeItem("session-token");
-    navigate("/signin");
+    router.push("/signin");
   };
   return (
     <div className="sticky top-0 z-50 bg-gradient-to-b from-blue-200 to-blue-100/50 backdrop-blur-sm px-3 ">

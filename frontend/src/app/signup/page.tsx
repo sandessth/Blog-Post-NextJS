@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Inputfield from "../blog/components/inputfield";
+import Inputfield from "../components/layout/inputfield";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Formik, Form } from "formik";
