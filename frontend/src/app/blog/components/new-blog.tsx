@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaPenNib } from "react-icons/fa";
 
 function Create() {
   const [title, setTitle] = useState("");
@@ -44,8 +45,8 @@ function Create() {
   return (
     <div className="flex justify-center p-10 ">
       <main className="w-2/3 border border-2 border-gray-900/10 p-5 bg-gray-300/20 rounded-lg">
-        <div className="text-xl text-slate-900/80 hover:text-blue-800 flex justify-center">
-          Create Blog:
+        <div className="text-xl text-slate-900/80 hover:text-blue-800 flex justify-center font-mono">
+          Create Blog ... <FaPenNib />
         </div>
         <div className="pt-10 pb-5 flex items-center">
           <label className="block text-sm text-slate-900/80 font-medium leading-6 text-gray-900 dark:text-slate-100">
