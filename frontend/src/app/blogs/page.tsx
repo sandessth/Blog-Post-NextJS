@@ -25,7 +25,7 @@ const Blogs = async () => {
           const blogImage = blogsdata.includes.Asset.find(
             (img: any) => img.sys.id === item.fields.image.sys.id
           );
-          console.log(blogImage);
+          const imageURL = blogImage.fields.file.url;
           return (
             <div
               key={blogsdata.sys.id}
@@ -33,7 +33,7 @@ const Blogs = async () => {
             >
               <h1 className="text-3xl mb-5">{item.fields.title}</h1>
               <p>{documentToReactComponents(item.fields.body)}</p>
-              <img src={blogImage} />
+              <img className="h-full" src={imageURL} />
             </div>
           );
         })}
