@@ -32,7 +32,7 @@ function Display1() {
           Featured Blogs:
         </div>
         <div>
-          {blog.items.map((item: any) => {
+          {blog.items?.map((item: any) => {
             const blogImage = blog.includes.Asset.find(
               (img: any) => img.sys.id === item.fields.image.sys.id
             );
