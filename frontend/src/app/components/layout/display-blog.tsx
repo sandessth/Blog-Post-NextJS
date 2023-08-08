@@ -40,17 +40,17 @@ function Display() {
                 key={blogContext.sys.id}
                 className="bg-gray-200 p-5 border-2 border-black/20 border-solid rounded m-5 drop-shadow-xl"
               >
-                <h1 className="text-xl font-bold m-5 text-blue-800">
+                <h1 className="text-xl font-bold m-5 mb-1 text-blue-800">
                   {item.fields.title}
                 </h1>
-                <div className="flex items-center mr-5 mt-5 flex-row-reverse">
-                  <p className="text-xs text-blue-700 hover:text-blue-400">
-                    {author}
-                  </p>
+                <div className="flex items-center  ">
                   <img
                     className=" mr-5 h-10 w-10 rounded-full border-2 border-black/10 border-solid hover:border-blue-500/50 "
                     src={imageURL}
                   />
+                  <p className="text-xs text-blue-700 hover:text-blue-400">
+                    {author}
+                  </p>
                 </div>
                 <p className="m-3 text-sm">
                   {documentToReactComponents(item.fields.body)}
