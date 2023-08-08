@@ -27,8 +27,8 @@ function Display1() {
   }, []);
   return (
     <div className="flex justify-center">
-      <div className="w-3/5 bg-slate-500/10 border-2 border-black/20 border-solid rounded p-10 m-10 ">
-        <div className=" flex justify-center text-2xl text-blue-700/80 hover:text-blue-500/80">
+      <div className="w-3/5 bg-slate-500/10 border-2 border-black/30 border-solid rounded p-10 m-10 ">
+        <div className=" flex justify-center text-2xl hover:text-blue-500/80 mb-5">
           Featured Blogs:
         </div>
         <div>
@@ -40,11 +40,19 @@ function Display1() {
             return (
               <div
                 key={blog.sys.id}
-                className="bg-gray-200 m-10 p-10 border border-2 border-black"
+                className="bg-gray-200 p-5 border-2 border-black/20 border-solid rounded m-5 drop-shadow-xl"
               >
-                <h1 className="text-3xl mb-5">{item.fields.title}</h1>
-                <p>{documentToReactComponents(item.fields.body)}</p>
-                <img className="h-full" src={imageURL} />
+                <img
+                  className=" m-5 h-10 w-10 rounded-full border-2 border-black/10 border-solid hover:border-blue-500/50 "
+                  src={imageURL}
+                />
+                <h1 className="text-xl font-bold m-5 text-blue-800">
+                  {item.fields.title}
+                </h1>
+
+                <p className="m-3 text-sm">
+                  {documentToReactComponents(item.fields.body)}
+                </p>
               </div>
             );
           })}

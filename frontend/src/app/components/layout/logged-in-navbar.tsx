@@ -1,14 +1,16 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { FaSignOutAlt } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import NavBar from "./logged-out-navbar";
 import { useNavigate } from "react-router-dom";
 import { useRouter } from "next/navigation";
+import Search from "./search-bar";
 
 function NavBarIn() {
   const router = useRouter();
+  const [searchSection, setSearchSection] = useState(false);
   const HandleLogout = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
@@ -18,7 +20,7 @@ function NavBarIn() {
   return (
     <div className="sticky top-0 z-50 bg-gradient-to-b from-blue-200 to-blue-100/50 backdrop-blur-sm px-3 ">
       <nav className="  px-2 px-5 text-lg">
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <div>
             <Link
               href="/"
@@ -33,6 +35,7 @@ function NavBarIn() {
               </div>
             </Link>
           </div>
+          {searchSection && <Search setSearchSection={setSearchSection} />}
           <div className="flex justify-between items-center">
             <div className="flex justify-between items-center font-bold gap-6">
               <Link
@@ -56,15 +59,15 @@ function NavBarIn() {
                 Contact
               </Link>
             </div>
-            <Link
-              href="/blog"
+            <div
+              onClick={() => setSearchSection(!searchSection)}
               className="text-slate-900/80 hover:text-blue-500 hover:backdrop-lg group relative pl-16"
             >
               <FaSearch />
               <div className="hidden text-sm text-white group-hover:block absolute top-8 right-0 bg-gray-500/80">
                 Search
               </div>
-            </Link>
+            </div>
             <p className="text-slate-900/80  hover:backdrop-lg px-3">|</p>
             <Link
               href="/signin"

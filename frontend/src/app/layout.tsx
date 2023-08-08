@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
+import BlogProvider from "./context/context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,16 +18,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div className="bgimg">
-          <div className="bg-white/60">
-            <Header />
-            {children}
-            <Footer />
+    <BlogProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <div className="bgimg">
+            <div className="bg-white/60">
+              <Header />
+              {children}
+              <Footer />
+            </div>
           </div>
-        </div>
-      </body>
-    </html>
+        </body>
+      </html>
+    </BlogProvider>
   );
 }
