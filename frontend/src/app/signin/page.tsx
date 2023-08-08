@@ -11,6 +11,7 @@ import Link from "next/link";
 import { FaUserAlt } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { useRouter } from "next/navigation";
+import Header from "@/components/layout/header";
 
 const SignIn = () => {
   // console.log(localStorage.getItem("session-token"));
@@ -44,50 +45,55 @@ const SignIn = () => {
   };
 
   return (
-    <div className="flex justify-center items-center py-5 ">
-      <Formik
-        initialValues={initialvalues}
-        onSubmit={handleSubmit}
-        validationSchema={validationSchema}
-      >
-        {() => {
-          return (
-            <div className="flex flex-col justify-center items-center w-full h-100vph text-black font-medium font-serif">
-              <Form className="w-[30%] h-120vph bg-black bg-opacity-10 border-2 border-black border-solid rounded p-10 flex flex-col justify-center m-0 pt-10 pb-10">
-                <h1 className="text-3xl mb-8 text-bold text-center">Sign In</h1>
-                <Inputfield
-                  type="text"
-                  name="email"
-                  label="E-mail Address"
-                  icon={<FaUserAlt />}
-                />
-                <Inputfield
-                  type="password"
-                  name="password"
-                  label="Password"
-                  icon={<RiLockPasswordFill />}
-                />
-                <p className="text-center mb-8">Forgot Password?</p>
+    <>
+      <Header />
+      <div className="flex justify-center items-center py-5 ">
+        <Formik
+          initialValues={initialvalues}
+          onSubmit={handleSubmit}
+          validationSchema={validationSchema}
+        >
+          {() => {
+            return (
+              <div className="flex flex-col justify-center items-center w-full h-100vph text-black font-medium font-serif">
+                <Form className="w-[30%] h-120vph bg-black bg-opacity-10 border-2 border-black border-solid rounded p-10 flex flex-col justify-center m-0 pt-10 pb-10">
+                  <h1 className="text-3xl mb-8 text-bold text-center">
+                    Sign In
+                  </h1>
+                  <Inputfield
+                    type="text"
+                    name="email"
+                    label="E-mail Address"
+                    icon={<FaUserAlt />}
+                  />
+                  <Inputfield
+                    type="password"
+                    name="password"
+                    label="Password"
+                    icon={<RiLockPasswordFill />}
+                  />
+                  <p className="text-center mb-8">Forgot Password?</p>
 
-                <button
-                  type="submit"
-                  className="border-2 w-full mb-6 border-black p-1 rounded-md text-lg"
-                >
-                  Sign In
-                </button>
-                <Link href="/signup" passHref>
-                  <p className="text-bold text-center underline">
-                    Don't have an Account? <br />
-                    Register Here!
-                  </p>
-                </Link>
-              </Form>
-              <ToastContainer className="ml-auto" />
-            </div>
-          );
-        }}
-      </Formik>
-    </div>
+                  <button
+                    type="submit"
+                    className="border-2 w-full mb-6 border-black p-1 rounded-md text-lg"
+                  >
+                    Sign In
+                  </button>
+                  <Link href="/signup" passHref>
+                    <p className="text-bold text-center underline">
+                      Don't have an Account? <br />
+                      Register Here!
+                    </p>
+                  </Link>
+                </Form>
+                <ToastContainer className="ml-auto" />
+              </div>
+            );
+          }}
+        </Formik>
+      </div>
+    </>
   );
 };
 

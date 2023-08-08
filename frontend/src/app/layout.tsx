@@ -23,7 +23,7 @@ export default function RootLayout({
         <body className={inter.className}>
           <div className="bgimg">
             <div className="bg-white/60">
-              <Header />
+              {/* <Header /> */}
               {children}
               <Footer />
             </div>
